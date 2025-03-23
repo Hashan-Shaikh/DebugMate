@@ -1,5 +1,5 @@
 import json
-from embedding_service import generate_embedding  # Assuming you have this function defined
+from services.embedding_service import generate_embedding  # Assuming you have this function defined
 from pinecone import Pinecone
 import os
 from dotenv import load_dotenv

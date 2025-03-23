@@ -1,8 +1,8 @@
-fastapi
 uvicorn
 pinecone
 requests
 sentence_transformers
 groq
 dotenv
+fastapi[all]
 

@@ -1,4 +1,4 @@
-from app.services.embedding_service import generate_embedding
+from services.embedding_service import generate_embedding
 from pinecone import Pinecone, ServerlessSpec
 from dotenv import load_dotenv
 import os

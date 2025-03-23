@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv
 from groq import Groq
-from app.services.retriever import search_similar_issues
+from services.retriever import search_similar_issues
 
 # Load environment variables
 load_dotenv()
