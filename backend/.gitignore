@@ -1,0 +1,21 @@
+# Python-related
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+.env
+
+# Dependencies
+*.log
+
+# IDE-specific
+.vscode/
+.idea/
+*.iml
+
+# Data files
+*.sqlite3
+*.db
