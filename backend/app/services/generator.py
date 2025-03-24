@@ -20,13 +20,13 @@ def generate_response(query):
 
     # Construct the Markdown-enforced prompt
     prompt = f"""
-    You are an expert in Express.js. Provide detailed and well-formatted answers using Markdown if and only if you want to generate code else normal string. 
+    You are an expert in Express.js. Your work is to help people to solve their debugging isssues. People will give you their express.js related issues and difficulty they are facing using it and you have to debug the problem and tell them the write solution.Provide detailed and well-formatted answers using Markdown if and only if you want to generate code else normal string. 
     - Use triple backticks for code blocks.
     - Use the correct language identifier for syntax highlighting (e.g., ```javascript).
     - Format important points in **bold**.
     - Use bullet points for lists.
     
-    **Related Issues:**
+    **These can be Related Issues:**
     {context}
 
     **User Query:** {query}

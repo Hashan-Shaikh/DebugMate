@@ -1,93 +1,152 @@
 [
-    {
-      "id": 1,
-      "title": "Issue with Middleware Order",
-      "body": "When using middleware in Express.js, the order of declaration is important. If the order is not correct, some routes may not work as expected. Ensure that the error-handling middleware is placed after all route handlers.",
-      "comments_text": "User A: This issue caused some unexpected behavior in our app. I fixed it by adjusting the order of my middleware."
-    },
-    {
-      "id": 2,
-      "title": "How to Handle File Uploads in Express",
-      "body": "Express.js doesn’t have built-in support for file uploads. However, you can use the `multer` middleware to handle file uploads. It’s a powerful middleware that can be used for handling `multipart/form-data` requests.",
-      "comments_text": "User B: I used `multer` for handling file uploads in our app. It worked great once I set the storage configuration properly."
-    },
-    {
-      "id": 3,
-      "title": "CORS Issues with Express.js",
-      "body": "CORS (Cross-Origin Resource Sharing) is a common issue when building APIs with Express.js. If you're dealing with requests from different domains, you might encounter CORS issues. To fix this, you need to use the `cors` middleware.",
-      "comments_text": "User C: Installing the `cors` package and using it in my app fixed the problem with cross-origin requests."
-    },
-    {
-      "id": 4,
-      "title": "How to Use Query Parameters in Express Routes",
-      "body": "In Express.js, you can access query parameters using `req.query`. For example, if you have a route `/search?term=express`, you can access `req.query.term` to retrieve the value of the query parameter `term`.",
-      "comments_text": "User D: This method was easy to implement, and I was able to get dynamic search functionality working quickly."
-    },
-    {
-      "id": 5,
-      "title": "Error Handling in Express",
-      "body": "Proper error handling is essential for building robust applications in Express.js. Use `next()` to pass errors to the next middleware and handle them centrally. Also, you can use `try/catch` blocks with async functions.",
-      "comments_text": "User E: The error-handling middleware example in the Express docs helped me set up centralized error handling."
-    },
-    {
-      "id": 6,
-      "title": "Optimizing Express Performance",
-      "body": "To optimize Express.js performance, you can implement caching strategies, compress responses, and use gzip compression for text-based responses. Additionally, consider using clustering or a reverse proxy like Nginx to handle more traffic.",
-      "comments_text": "User F: I used `compression` middleware in my app to compress responses, and it helped improve the app's performance."
-    },
-    {
-      "id": 7,
-      "title": "Authentication with Passport.js in Express",
-      "body": "Passport.js is a popular authentication middleware for Express. It provides a simple and consistent API to handle different authentication strategies like Google, Facebook, and local authentication. Setting it up involves installing the necessary strategy and configuring it within Express.",
-      "comments_text": "User G: I used Passport.js for Google authentication, and the setup process was easy. I highly recommend it for authentication needs."
-    },
-    {
-      "id": 8,
-      "title": "Rate Limiting in Express.js",
-      "body": "Rate limiting is important to prevent abuse of your API. You can use the `express-rate-limit` package to limit the number of requests a user can make to your API within a certain period.",
-      "comments_text": "User H: Implementing rate limiting using `express-rate-limit` was a game-changer. We no longer face DoS attacks."
-    },
-    {
-      "id": 9,
-      "title": "Session Management in Express.js",
-      "body": "Managing sessions in Express.js typically involves using the `express-session` middleware, which allows you to store session data on the server or in a database. Make sure to use secure cookie settings for better security.",
-      "comments_text": "User I: I used `express-session` and configured Redis as the session store. It worked really well."
-    },
-    {
-      "id": 10,
-      "title": "How to Build a REST API with Express.js",
-      "body": "Building a REST API with Express is straightforward. You define routes, use middleware to handle requests, and send responses. Express also works seamlessly with databases like MongoDB or PostgreSQL, and you can use ORMs like Sequelize or Mongoose to interact with them.",
-      "comments_text": "User J: I built a simple REST API with Express and MongoDB, and it was incredibly easy to set up using Mongoose for database interaction."
-    },
-    {
-      "id": 11,
-      "title": "Handling HTTP Errors in Express.js",
-      "body": "In Express.js, HTTP errors can be handled by using error-handling middleware. This middleware can catch errors from asynchronous route handlers or synchronous ones. You can also customize error messages and status codes.",
-      "comments_text": "User K: I’ve customized error handling to return detailed error messages with proper HTTP status codes. It helped improve the UX of our app."
-    },
-    {
-      "id": 12,
-      "title": "Logging Requests with Morgan in Express",
-      "body": "Logging HTTP requests is important for debugging and monitoring. Express supports logging through `morgan` middleware. You can log request details like the request method, URL, status code, and response time.",
-      "comments_text": "User L: We implemented `morgan` for logging and found it to be very useful for debugging and analyzing traffic patterns."
-    },
-    {
-      "id": 13,
-      "title": "Serving Static Files with Express",
-      "body": "Express can serve static files, like images, CSS, and JavaScript, using the `express.static` middleware. You can define a directory where your static files are stored and serve them via HTTP requests.",
-      "comments_text": "User M: Serving static files was simple with `express.static`. We used it for serving images and other assets."
-    },
-    {
-      "id": 14,
-      "title": "Building a WebSocket Server with Express.js",
-      "body": "Express.js can be combined with WebSocket libraries like `ws` or `socket.io` to create real-time communication between the server and clients. This is useful for building chat applications, notifications, and live updates.",
-      "comments_text": "User N: I built a chat application using `socket.io` with Express. It was easy to implement real-time features."
-    },
-    {
-      "id": 15,
-      "title": "Deploying Express Apps on Heroku",
-      "body": "Heroku is a popular platform for deploying Express.js applications. It allows you to easily deploy your app to the cloud with a simple git push. You need to set up a `Procfile` to tell Heroku how to run your app.",
-      "comments_text": "User O: We used Heroku to deploy our Express app. The process was smooth, and the app is running without any issues."
-    }
-  ]
-  
+  {
+    "id": 1,
+    "title": "Middleware Order Issue",
+    "body": "In Express.js, middleware order is crucial. If not ordered properly, some routes might not work as expected.",
+    "comments_text": "User A: Ensure that error-handling middleware is placed after all route handlers to avoid unexpected behavior."
+  },
+  {
+    "id": 2,
+    "title": "CORS Issues in Express",
+    "body": "If your app needs to handle requests from different domains, you might face Cross-Origin Resource Sharing (CORS) issues.",
+    "comments_text": "User B: Installing the 'cors' middleware and using it in your app can resolve cross-origin issues."
+  },
+  {
+    "id": 3,
+    "title": "404 Error on Routes",
+    "body": "When Express doesn’t find a route handler for a URL, it returns a 404 error, but sometimes it doesn’t show up.",
+    "comments_text": "User C: Make sure to add a 'catch-all' route handler at the end of your routes to return a proper 404 response."
+  },
+  {
+    "id": 4,
+    "title": "Rate Limiting in Express",
+    "body": "You might face issues with too many requests coming to your API, causing abuse or DoS attacks.",
+    "comments_text": "User D: Use the 'express-rate-limit' package to limit the number of requests within a time frame to mitigate such attacks."
+  },
+  {
+    "id": 5,
+    "title": "Session Management Error",
+    "body": "Express-session is a common package for session management. However, improper configuration may cause session data to be lost.",
+    "comments_text": "User E: Ensure you use proper cookie configurations and store sessions securely with Redis or a database."
+  },
+  {
+    "id": 6,
+    "title": "Handling Async Errors",
+    "body": "Express may not handle async errors well, which may lead to unhandled promise rejections.",
+    "comments_text": "User F: Wrap async route handlers in a try-catch block or use a global error handler middleware to catch async errors."
+  },
+  {
+    "id": 7,
+    "title": "Invalid JSON Body Error",
+    "body": "When sending JSON data in requests, Express might fail to parse the body, throwing errors.",
+    "comments_text": "User G: Use 'express.json()' middleware to parse incoming JSON payloads in your request body."
+  },
+  {
+    "id": 8,
+    "title": "Error with Static Files",
+    "body": "Sometimes Express fails to serve static files like images, CSS, or JavaScript.",
+    "comments_text": "User H: Use 'express.static' middleware correctly to serve static files, and make sure your file paths are correct."
+  },
+  {
+    "id": 9,
+    "title": "Cannot Access Query Parameters",
+    "body": "Sometimes developers encounter issues accessing query parameters in Express routes.",
+    "comments_text": "User I: Use 'req.query' to access query parameters, for example, 'req.query.name' to retrieve 'name'."
+  },
+  {
+    "id": 10,
+    "title": "Authentication with Passport.js",
+    "body": "Setting up Passport.js for authentication in Express might cause issues if strategies aren’t configured properly.",
+    "comments_text": "User J: Install the correct Passport strategy, configure it in the Express app, and ensure proper session handling."
+  },
+  {
+    "id": 11,
+    "title": "Handling HTTP Methods (GET, POST)",
+    "body": "Some requests might not be routed correctly due to HTTP method mismatches.",
+    "comments_text": "User K: Ensure that you're using the correct HTTP method (GET, POST, etc.) and check if the route matches the method."
+  },
+  {
+    "id": 12,
+    "title": "404 for Dynamic Routes",
+    "body": "Dynamic routes with parameters might give a 404 error if they aren't configured correctly.",
+    "comments_text": "User L: Check the syntax of your dynamic routes like '/user/:id' and ensure they match the request URL."
+  },
+  {
+    "id": 13,
+    "title": "No Response from API",
+    "body": "Sometimes Express doesn’t return a response to the client after a request.",
+    "comments_text": "User M: Ensure that you’re calling 'res.send()', 'res.json()', or 'res.status()' after processing the request."
+  },
+  {
+    "id": 14,
+    "title": "Debugging Express.js",
+    "body": "Finding the source of bugs in Express.js can be tricky, especially with complex middleware.",
+    "comments_text": "User N: Use console logs or a debugger (like 'node inspect') to narrow down where the issue is occurring in your middleware stack."
+  },
+  {
+    "id": 15,
+    "title": "Accessing Request Headers",
+    "body": "Sometimes headers might not be available or are inaccessible in Express.",
+    "comments_text": "User O: Use 'req.headers' to access headers, or 'req.get('header-name')' to get specific headers."
+  },
+  {
+    "id": 16,
+    "title": "Handling Validation Errors",
+    "body": "Validation errors might occur when checking data from requests.",
+    "comments_text": "User P: Use 'express-validator' or 'Joi' to validate incoming request data and send appropriate error responses."
+  },
+  {
+    "id": 17,
+    "title": "Handling File Uploads",
+    "body": "Express doesn’t handle file uploads natively, leading to issues when managing them.",
+    "comments_text": "User Q: Use 'multer' middleware to handle multipart file uploads in your Express app."
+  },
+  {
+    "id": 18,
+    "title": "Template Engine Integration",
+    "body": "Some users struggle when integrating template engines like EJS or Pug into Express.",
+    "comments_text": "User R: Ensure that the template engine is properly installed and configured using 'app.set('view engine', 'ejs')'."
+  },
+  {
+    "id": 19,
+    "title": "Rate Limiting with Express-Rate-Limit",
+    "body": "Too many requests to the server can lead to overload if rate limiting is not set up.",
+    "comments_text": "User S: Use 'express-rate-limit' to set limits on how many requests a user can make in a specific time frame."
+  },
+  {
+    "id": 20,
+    "title": "Handling 500 Internal Server Errors",
+    "body": "500 errors are often a sign of unhandled exceptions or incorrect middleware setup.",
+    "comments_text": "User T: Add error-handling middleware at the end of your app, ensuring that any errors during processing are captured and logged."
+  },
+  {
+    "id": 21,
+    "title": "Express Application Not Starting",
+    "body": "Sometimes the Express application might not start, or it may exit unexpectedly.",
+    "comments_text": "User U: Make sure you have correctly defined the app's port with 'app.listen(PORT)' and there are no syntax errors."
+  },
+  {
+    "id": 22,
+    "title": "MongoDB Connection Issues",
+    "body": "If you're using MongoDB with Express, you might encounter issues with database connection.",
+    "comments_text": "User V: Use the 'mongoose.connect()' method to connect to MongoDB, and ensure that the database URI is correct."
+  },
+  {
+    "id": 23,
+    "title": "Unhandled Promise Rejections",
+    "body": "Express doesn’t always handle unhandled promise rejections well, causing app crashes.",
+    "comments_text": "User W: Always handle promise rejections using '.catch()' or async/await with try-catch blocks to prevent app crashes."
+  },
+  {
+    "id": 24,
+    "title": "SSL/TLS Configuration in Express",
+    "body": "Setting up HTTPS with SSL/TLS certificates can be tricky in Express.",
+    "comments_text": "User X: Use 'https.createServer()' with your SSL certificate and key to ensure secure connections."
+  },
+  {
+    "id": 25,
+    "title": "Express Routing Not Working",
+    "body": "In some cases, routing might not work as expected, especially with complex or nested routes.",
+    "comments_text": "User Y: Ensure that your routes are properly defined and use 'next()' to pass control to the next middleware when needed."
+  }
+]
