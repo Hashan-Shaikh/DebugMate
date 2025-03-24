@@ -21,5 +21,5 @@ app.add_middleware(
 
 @app.get("/chat")
 def ask_expressjs(query: str):
-    return {"response": generate_response(query)}
+    return {"result": generate_response(query)}
 

@@ -7,7 +7,7 @@ export const sendMessageToAPI = async (query: string) => {
     const response = await axios.get(`${API_BASE_URL}/chat`, {
       params: { query }, // Sending message as a query parameter
     });
-    return response.data; // Assuming FastAPI returns { reply: "AI response" }
+    return response.data.result; // Assuming FastAPI returns { reply: "AI response" }
   } catch (error) {
     console.error("API Error:", error);
     return "Error fetching response from AI.";

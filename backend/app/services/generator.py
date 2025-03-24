@@ -11,17 +11,26 @@ GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 client = Groq(api_key=GROQ_API_KEY)
 
 def generate_response(query):
-    """Generate an LLM-based response for a query using Groq API."""
+    """Generate an LLM-based response for a query using Groq API, ensuring Markdown formatting."""
     related_issues = search_similar_issues(query)
     print(len(related_issues))
 
     # Format the context from related GitHub issues
-    context = "\n".join([f"{issue['title']} - {issue['body']}" for issue in related_issues])
+    context = "\n".join([f"**{issue['title']}**\n\n{issue['body']}" for issue in related_issues])
 
-    # Construct the prompt
-    prompt = f"""You are an Express.js expert. Answer the user's query based on the following related issues:
+    # Construct the Markdown-enforced prompt
+    prompt = f"""
+    You are an expert in Express.js. Provide detailed and well-formatted answers using Markdown if and only if you want to generate code else normal string. 
+    - Use triple backticks for code blocks.
+    - Use the correct language identifier for syntax highlighting (e.g., ```javascript).
+    - Format important points in **bold**.
+    - Use bullet points for lists.
+    
+    **Related Issues:**
     {context}
-    User Query: {query}"""
+
+    **User Query:** {query}
+    """
 
     # Generate response using Groq API
     response = client.chat.completions.create(
@@ -30,4 +39,3 @@ def generate_response(query):
     )
 
     return response.choices[0].message.content
-
