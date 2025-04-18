@@ -1,8 +1,14 @@
 from fastapi import FastAPI
-from services.generator import generate_response
 from fastapi.middleware.cors import CORSMiddleware
+from db.session import Base, engine
+from api import user
+
 
 app = FastAPI()
+
+# Create tables in DB
+Base.metadata.create_all(bind=engine)
+
 
 # Allow origins (Frontend URL or use "*" for all origins)
 origins = [
@@ -19,7 +25,6 @@ app.add_middleware(
     allow_headers=["*"],  # Allow all headers
 )
 
-@app.get("/chat")
-def ask_expressjs(query: str):
-    return {"result": generate_response(query)}
+app.include_router(user.router)
+
 
